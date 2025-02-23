@@ -1,0 +1,421 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height:20vh;
+}
+
+.title {
+  width:100%;
+  height: 10vh;
+  background-color: #fff;
+  color: #d32f2f;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  align-content: center;
+  flex-grow: 1;
+  padding: 10px 0;
+}
+
+.logo {
+  max-height: 10vh;
+  position: absolute;
+  left: 20px; /* Keeps logo on the left */
+}
+
+/* Main Content Layout */
+.main-content {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.left-pane {
+  width: 20%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-list-container {
+  width: 80%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Section */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.search-input {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #d32f2f;
+  box-shadow: 0 0 8px rgba(211, 47, 47, 0.2);
+  outline: none;
+}
+
+/* Filters List Container */
+/* Filters List Container */
+.filter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Slightly increased gap between items */
+}
+
+/* Individual Filter Items */
+.filter-list li {
+  cursor: pointer;
+  padding: 14px; /* Increased padding for better touch targets */
+  background-color: #ffffff; /* White background for better contrast */
+  border: 1px solid #e0e0e0; /* Subtle border */
+  border-radius: 10px; /* More rounded corners */
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  font-size: 16px; /* Slightly larger font size */
+  color: #333; /* Darker text color for better readability */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+}
+
+.filter-list li:hover {
+  background-color: #f2f2f2; /* Light gray background on hover */
+  border-color: #d32f2f; /* Border color on hover */
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+.filter-list li:active {
+  transform: translateY(0); /* Reset lift on click */
+}
+
+/* Active Filter Item */
+.filter-list li.active {
+  background-color: #d32f2f; /* Highlight active item */
+  color: white; /* White text for contrast */
+  border-color: #d32f2f; /* Matching border color */
+}
+
+/* Input Fields in Filters */
+.filter-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-input:focus {
+  border-color: #d32f2f; /* Color on focus */
+  outline: none;
+  box-shadow: 0 0 8px rgba(211, 47, 47, 0.2);
+}
+
+/* Dropdown for City Selection */
+.filter-list select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #555;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-list select:focus {
+  border-color: #d32f2f; /* Color on focus */
+  outline: none;
+  box-shadow: 0 0 8px rgba(211, 47, 47, 0.2);
+}
+
+/* Latitude, Longitude, and Radius Inputs */
+.lat-lng-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.lat-lng-inputs input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lat-lng-inputs input:focus {
+  border-color: #d32f2f;
+  outline: none;
+  box-shadow: 0 0 8px rgba(211, 47, 47, 0.2);
+}
+
+/* Upload Section */
+.upload-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.upload-container label {
+  padding: 10px 15px;
+  background-color: #d32f2f;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.upload-container label:hover {
+  background-color: #b71c1c;
+  transform: scale(1.05);
+}
+
+.upload-container button {
+  padding: 10px 15px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.upload-container button:hover {
+  background-color: #b71c1c;
+  transform: scale(1.05);
+}
+
+.clear-btn {
+  background-color: #ff5722 !important;
+}
+
+.clear-btn:hover {
+  background-color: #e64a19 !important;
+}
+
+/* Responsive Design for Filters */
+@media (max-width: 768px) {
+  .filter-list li {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .filter-input,
+  .filter-list select,
+  .lat-lng-inputs input {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .upload-container label,
+  .upload-container button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+/* Restaurant List */
+.restaurant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.restaurant-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.restaurant-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 10px 0;
+}
+
+.restaurant-city, .restaurant-rating {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.details-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d32f2f;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.details-btn:hover {
+  background-color: #b71c1c;
+  transform: scale(1.05);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #b71c1c;
+  transform: scale(1.05);
+}
+
+.page-indicator {
+  font-size: 16px;
+  font-weight: 600;
+  color: #d32f2f;
+}
+
+/* Footer */
+.footer {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.footer p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.footer a {
+  color:#d32f2f;
+  text-decoration: none;
+  background-color: white;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  background-color: white;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .left-pane, .restaurant-list-container {
+    width: 100%;
+  }
+
+  .restaurant-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-input, .filter-input {
+    font-size: 14px;
+  }
+
+  .restaurant-card {
+    padding: 15px;
+  }
+
+  .restaurant-name {
+    font-size: 18px;
+  }
+
+  .restaurant-city, .restaurant-rating {
+    font-size: 12px;
+  }
+
+  .details-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
