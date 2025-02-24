@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import styles from "../styles/RestaurantDetail.module.css"; // Updated import
+import styles from "../styles/RestaurantDetail.module.css";
 
 function RestaurantDetail() {
   const { id } = useParams();
@@ -11,7 +11,7 @@ function RestaurantDetail() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/restaurants/${id}`)
+      .get(`https://yumlocator.onrender.com/restaurants/${id}`)
       .then(response => {
         if (response.data) {
           setRestaurant(response.data);
