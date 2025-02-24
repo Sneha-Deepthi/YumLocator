@@ -14,10 +14,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 // ✅ MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/zomato', { 
-  useNewUrlParser: true, 
-  useUnifiedTopology: true 
-}).then(() => console.log("✅ MongoDB connected"))
+ongoose.connect(process.env.MONGODB_URI).then(() => console.log("✅ MongoDB connected"))
   .catch(err => console.log("❌ MongoDB connection error:", err));
 
   app.get('/location', async (req, res) => {
