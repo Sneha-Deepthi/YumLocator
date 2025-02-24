@@ -37,12 +37,12 @@ const RestaurantList = () => {
         radius: latitude && longitude ? radius : undefined,
       };
 
-      let endpoint = "http://localhost:5000/restaurants";
+      let endpoint = "https://yumlocator.onrender.com/restaurants";
 
       if (searchTerm.trim()) {
-        endpoint = "http://localhost:5000/restaurants/search";
+        endpoint = "https://yumlocator.onrender.com/restaurants/search";
       } else if (latitude && longitude) {
-        endpoint = "http://localhost:5000/location";
+        endpoint = "https://yumlocator.onrender.com/location";
       }
 
       const response = await axios.get(endpoint, { params });
@@ -71,7 +71,7 @@ const RestaurantList = () => {
   useEffect(() => {
     const fetchCities = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/cities");
+        const response = await axios.get("https://yumlocator.onrender.com/cities");
         setCities(response.data);
       } catch (error) {
         setError("⚠️ Error fetching cities.");
@@ -97,7 +97,7 @@ const RestaurantList = () => {
     formData.append("image", file);
 
     try {
-      const response = await fetch("http://localhost:5000/upload", {
+      const response = await fetch("https://yumlocator.onrender.com/upload", {
         method: "POST",
         body: formData,
       });
