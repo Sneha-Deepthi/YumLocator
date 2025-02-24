@@ -14,7 +14,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 // ✅ MongoDB Connection
-ongoose.connect(process.env.MONGODB_URI).then(() => console.log("✅ MongoDB connected"))
+mongoose.connect(process.env.MONGODB_URI).then(() => console.log("✅ MongoDB connected"))
   .catch(err => console.log("❌ MongoDB connection error:", err));
 
   app.get('/location', async (req, res) => {
